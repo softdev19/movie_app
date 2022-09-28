@@ -44,6 +44,7 @@ class SignupVC: UIViewController {
     lazy var button: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign up", for: .normal)
+        button.addTarget(self, action: #selector(goToMainVC), for: .touchUpInside)
         button.tintColor = .white
         button.backgroundColor = .systemGreen
         button.layer.cornerRadius = 15.0
@@ -61,6 +62,11 @@ class SignupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    @objc private func goToMainVC(){
+        self.view.window?.rootViewController = MainVC()
+        self.view.window?.makeKeyAndVisible()
     }
     
     private func setupView(){
@@ -102,6 +108,5 @@ class SignupVC: UIViewController {
         
         
     }
-
 
 }

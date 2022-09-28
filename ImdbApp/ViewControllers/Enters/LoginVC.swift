@@ -32,6 +32,7 @@ class LoginVC: UIViewController {
     lazy var button: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Log in", for: .normal)
+        button.addTarget(self, action: #selector(goToMainVC), for: .touchUpInside)
         button.tintColor = .white
         button.backgroundColor = .systemGreen
         button.layer.cornerRadius = 15.0
@@ -49,6 +50,12 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    @objc private func goToMainVC(){
+        
+        self.view.window?.rootViewController = MainVC()
+        self.view.window?.makeKeyAndVisible()
     }
     
     private func setupView(){
@@ -80,6 +87,5 @@ class LoginVC: UIViewController {
             make.trailing.equalTo(view.snp.trailing).inset(40)
         }
     }
-
 
 }
