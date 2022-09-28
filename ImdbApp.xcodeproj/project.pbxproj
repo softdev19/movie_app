@@ -9,23 +9,36 @@
 /* Begin PBXBuildFile section */
 		0459BBD828E4B01E005DAC08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBD728E4B01E005DAC08 /* AppDelegate.swift */; };
 		0459BBDA28E4B01E005DAC08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBD928E4B01E005DAC08 /* SceneDelegate.swift */; };
-		0459BBDC28E4B01E005DAC08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBDB28E4B01E005DAC08 /* ViewController.swift */; };
+		0459BBDC28E4B01E005DAC08 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBDB28E4B01E005DAC08 /* HomeVC.swift */; };
 		0459BBE228E4B01F005DAC08 /* ImdbApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBE028E4B01F005DAC08 /* ImdbApp.xcdatamodeld */; };
 		0459BBE428E4B022005DAC08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0459BBE328E4B022005DAC08 /* Assets.xcassets */; };
 		0459BBE728E4B022005DAC08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0459BBE528E4B022005DAC08 /* LaunchScreen.storyboard */; };
 		0459BBF128E4B348005DAC08 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0459BBF028E4B348005DAC08 /* .gitignore */; };
+		0459BBF528E4B632005DAC08 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBF428E4B632005DAC08 /* MainVC.swift */; };
+		0459BBF728E4B806005DAC08 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBF628E4B806005DAC08 /* SearchVC.swift */; };
+		0459BBF928E4B818005DAC08 /* DownloadsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBF828E4B818005DAC08 /* DownloadsVC.swift */; };
+		0459BBFD28E4BA93005DAC08 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBFC28E4BA93005DAC08 /* StartVC.swift */; };
+		0459BBFF28E4BAA7005DAC08 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBFE28E4BAA7005DAC08 /* LoginVC.swift */; };
+		0459BC0128E4BAC3005DAC08 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BC0028E4BAC3005DAC08 /* SignupVC.swift */; };
+		0459BC0528E4BC92005DAC08 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0459BC0428E4BC92005DAC08 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0459BBD428E4B01E005DAC08 /* ImdbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImdbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0459BBD728E4B01E005DAC08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0459BBD928E4B01E005DAC08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0459BBDB28E4B01E005DAC08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0459BBDB28E4B01E005DAC08 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		0459BBE128E4B01F005DAC08 /* ImdbApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImdbApp.xcdatamodel; sourceTree = "<group>"; };
 		0459BBE328E4B022005DAC08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0459BBE628E4B022005DAC08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0459BBE828E4B022005DAC08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0459BBF028E4B348005DAC08 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0459BBF428E4B632005DAC08 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		0459BBF628E4B806005DAC08 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		0459BBF828E4B818005DAC08 /* DownloadsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsVC.swift; sourceTree = "<group>"; };
+		0459BBFC28E4BA93005DAC08 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
+		0459BBFE28E4BAA7005DAC08 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0459BC0028E4BAC3005DAC08 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0459BC0528E4BC92005DAC08 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +76,7 @@
 				0459BBF028E4B348005DAC08 /* .gitignore */,
 				0459BBE028E4B01F005DAC08 /* ImdbApp.xcdatamodeld */,
 				0459BBEE28E4B0DE005DAC08 /* App */,
-				0459BBDB28E4B01E005DAC08 /* ViewController.swift */,
+				0459BBFA28E4B823005DAC08 /* ViewControllers */,
 			);
 			path = ImdbApp;
 			sourceTree = "<group>";
@@ -86,6 +100,36 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		0459BBFA28E4B823005DAC08 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0459BBFC28E4BA93005DAC08 /* StartVC.swift */,
+				0459BC0228E4BAC7005DAC08 /* Enters */,
+				0459BBFB28E4BA61005DAC08 /* Body */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0459BBFB28E4BA61005DAC08 /* Body */ = {
+			isa = PBXGroup;
+			children = (
+				0459BBF428E4B632005DAC08 /* MainVC.swift */,
+				0459BBDB28E4B01E005DAC08 /* HomeVC.swift */,
+				0459BBF628E4B806005DAC08 /* SearchVC.swift */,
+				0459BBF828E4B818005DAC08 /* DownloadsVC.swift */,
+			);
+			path = Body;
+			sourceTree = "<group>";
+		};
+		0459BC0228E4BAC7005DAC08 /* Enters */ = {
+			isa = PBXGroup;
+			children = (
+				0459BBFE28E4BAA7005DAC08 /* LoginVC.swift */,
+				0459BC0028E4BAC3005DAC08 /* SignupVC.swift */,
+			);
+			path = Enters;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,6 +146,9 @@
 			dependencies = (
 			);
 			name = ImdbApp;
+			packageProductDependencies = (
+				0459BC0428E4BC92005DAC08 /* SnapKit */,
+			);
 			productName = ImdbApp;
 			productReference = 0459BBD428E4B01E005DAC08 /* ImdbApp.app */;
 			productType = "com.apple.product-type.application";
@@ -130,6 +177,9 @@
 				Base,
 			);
 			mainGroup = 0459BBCB28E4B01E005DAC08;
+			packageReferences = (
+				0459BC0328E4BC92005DAC08 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 0459BBD528E4B01E005DAC08 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -157,10 +207,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0459BBDC28E4B01E005DAC08 /* ViewController.swift in Sources */,
+				0459BBF728E4B806005DAC08 /* SearchVC.swift in Sources */,
+				0459BBDC28E4B01E005DAC08 /* HomeVC.swift in Sources */,
+				0459BBF528E4B632005DAC08 /* MainVC.swift in Sources */,
 				0459BBE228E4B01F005DAC08 /* ImdbApp.xcdatamodeld in Sources */,
+				0459BBF928E4B818005DAC08 /* DownloadsVC.swift in Sources */,
+				0459BBFF28E4BAA7005DAC08 /* LoginVC.swift in Sources */,
+				0459BC0128E4BAC3005DAC08 /* SignupVC.swift in Sources */,
 				0459BBD828E4B01E005DAC08 /* AppDelegate.swift in Sources */,
 				0459BBDA28E4B01E005DAC08 /* SceneDelegate.swift in Sources */,
+				0459BBFD28E4BA93005DAC08 /* StartVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +428,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0459BC0328E4BC92005DAC08 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0459BC0428E4BC92005DAC08 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0459BC0328E4BC92005DAC08 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		0459BBE028E4B01F005DAC08 /* ImdbApp.xcdatamodeld */ = {
