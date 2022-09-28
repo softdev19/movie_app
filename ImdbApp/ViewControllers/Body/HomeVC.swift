@@ -15,7 +15,18 @@ class HomeVC: UIViewController {
     }
     
     private func setupView(){
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .systemBackground
+        title = "Home"
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(goToSettingsVC))
+        navigationController?.navigationBar.tintColor = .white
     }
+    
+    @objc private func goToSettingsVC(){
+        navigationController?.pushViewController(SettingsVC(), animated: true)
+    }
+    
+    
 }
 

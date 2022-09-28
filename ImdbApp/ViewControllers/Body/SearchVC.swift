@@ -15,7 +15,7 @@ class SearchVC: UIViewController {
     }
     
     private func setupView(){
-        view.backgroundColor = .systemGreen
+        view.backgroundColor = .systemBackground
     }
 
 }
