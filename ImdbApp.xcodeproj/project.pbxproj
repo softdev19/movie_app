@@ -21,6 +21,7 @@
 		0459BBFF28E4BAA7005DAC08 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBFE28E4BAA7005DAC08 /* LoginVC.swift */; };
 		0459BC0128E4BAC3005DAC08 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BC0028E4BAC3005DAC08 /* SignupVC.swift */; };
 		0459BC0528E4BC92005DAC08 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0459BC0428E4BC92005DAC08 /* SnapKit */; };
+		04631E2228E4D0A100252F9B /* bg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04631E2128E4D0A100252F9B /* bg.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		0459BBFC28E4BA93005DAC08 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		0459BBFE28E4BAA7005DAC08 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		0459BC0028E4BAC3005DAC08 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		04631E2128E4D0A100252F9B /* bg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bg.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		0459BBEF28E4B0EE005DAC08 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0459BC0828E4C74B005DAC08 /* Media */,
 				0459BBE328E4B022005DAC08 /* Assets.xcassets */,
 				0459BBE528E4B022005DAC08 /* LaunchScreen.storyboard */,
 			);
@@ -128,6 +131,14 @@
 				0459BC0028E4BAC3005DAC08 /* SignupVC.swift */,
 			);
 			path = Enters;
+			sourceTree = "<group>";
+		};
+		0459BC0828E4C74B005DAC08 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				04631E2128E4D0A100252F9B /* bg.mp4 */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 				0459BBE728E4B022005DAC08 /* LaunchScreen.storyboard in Resources */,
 				0459BBF128E4B348005DAC08 /* .gitignore in Resources */,
 				0459BBE428E4B022005DAC08 /* Assets.xcassets in Resources */,
+				04631E2228E4D0A100252F9B /* bg.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
