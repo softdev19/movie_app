@@ -20,6 +20,7 @@ class StartVC: UIViewController {
     
     lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(moveToLoginScreen), for: .touchUpInside)
         button.setTitle("LOG IN", for: .normal)
         button.layer.cornerRadius = 20.0
         button.backgroundColor = .systemGreen
@@ -29,6 +30,7 @@ class StartVC: UIViewController {
     
     lazy var signupButton: UIButton = {
         let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(moveToSignupScreen), for: .touchUpInside)
         button.setTitle("SIGN UP", for: .normal)
         button.layer.cornerRadius = 20.0
         button.backgroundColor = .lightGray
@@ -57,7 +59,15 @@ class StartVC: UIViewController {
         
         self.view.layer.insertSublayer(layer, at: 0)
         player.playImmediately(atRate: 0.7)
-    }  
+    }
+    
+    @objc private func moveToSignupScreen(){
+        self.present(SignupVC(), animated: true, completion: nil)
+    }
+    
+    @objc private func moveToLoginScreen(){
+        self.present(LoginVC(), animated: true, completion: nil)
+    }
     
     private func setupView(){
         view.backgroundColor = .white
