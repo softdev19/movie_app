@@ -10,6 +10,7 @@ import SnapKit
 
 class LoginVC: UIViewController {
     
+    //MARK: --Properties
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, button, errorLabel])
         stackView.axis = .vertical
@@ -47,11 +48,13 @@ class LoginVC: UIViewController {
         return label
     }()
 
+    //MARK: --LifeCycleOfViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
+    //MARK: --Functions
     @objc private func goToMainVC(){
         
         self.view.window?.rootViewController = MainVC()

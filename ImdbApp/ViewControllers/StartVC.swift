@@ -11,6 +11,7 @@ import AVKit
 
 class StartVC: UIViewController {
     
+    //MARK: --Properties
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [loginButton, signupButton])
         stackView.axis = .vertical
@@ -38,6 +39,7 @@ class StartVC: UIViewController {
         return button
     }()
     
+    //MARK: --LifeCycleOfViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -61,6 +63,7 @@ class StartVC: UIViewController {
         player.playImmediately(atRate: 0.7)
     }
     
+    //MARK: --Functions
     @objc private func moveToSignupScreen(){
         self.present(SignupVC(), animated: true, completion: nil)
     }
