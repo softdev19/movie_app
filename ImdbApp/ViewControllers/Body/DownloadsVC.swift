@@ -15,7 +15,7 @@ class DownloadsVC: UIViewController {
     }
 
     private func setupView(){
-        view.backgroundColor = .systemRed
+        view.backgroundColor = .systemBackground
     }
 
 }
