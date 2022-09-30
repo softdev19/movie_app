@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0415D6AA28E7229700BE4763 /* TableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415D6A928E7229700BE4763 /* TableHeader.swift */; };
 		0459BBD828E4B01E005DAC08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBD728E4B01E005DAC08 /* AppDelegate.swift */; };
 		0459BBDA28E4B01E005DAC08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBD928E4B01E005DAC08 /* SceneDelegate.swift */; };
 		0459BBDC28E4B01E005DAC08 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBDB28E4B01E005DAC08 /* HomeVC.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0415D6A928E7229700BE4763 /* TableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeader.swift; sourceTree = "<group>"; };
 		0459BBD428E4B01E005DAC08 /* ImdbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImdbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0459BBD728E4B01E005DAC08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0459BBD928E4B01E005DAC08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0415D6AB28E722A000BE4763 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0415D6A928E7229700BE4763 /* TableHeader.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0459BBCB28E4B01E005DAC08 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 				04631E3028E4E3DF00252F9B /* GoogleService-Info.plist */,
 				0459BBE028E4B01F005DAC08 /* ImdbApp.xcdatamodeld */,
 				0459BBEE28E4B0DE005DAC08 /* App */,
+				0415D6AB28E722A000BE4763 /* Views */,
 				0459BBFA28E4B823005DAC08 /* ViewControllers */,
 			);
 			path = ImdbApp;
@@ -119,7 +130,6 @@
 		0459BBFA28E4B823005DAC08 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0459BBFC28E4BA93005DAC08 /* StartVC.swift */,
 				0459BC0228E4BAC7005DAC08 /* Enters */,
 				0459BBFB28E4BA61005DAC08 /* Body */,
 			);
@@ -141,6 +151,7 @@
 		0459BC0228E4BAC7005DAC08 /* Enters */ = {
 			isa = PBXGroup;
 			children = (
+				0459BBFC28E4BA93005DAC08 /* StartVC.swift */,
 				0459BBFE28E4BAA7005DAC08 /* LoginVC.swift */,
 				0459BC0028E4BAC3005DAC08 /* SignupVC.swift */,
 			);
@@ -244,6 +255,7 @@
 				0459BBDC28E4B01E005DAC08 /* HomeVC.swift in Sources */,
 				0459BBF528E4B632005DAC08 /* MainVC.swift in Sources */,
 				0459BBE228E4B01F005DAC08 /* ImdbApp.xcdatamodeld in Sources */,
+				0415D6AA28E7229700BE4763 /* TableHeader.swift in Sources */,
 				0459BBF928E4B818005DAC08 /* DownloadsVC.swift in Sources */,
 				0459BBFF28E4BAA7005DAC08 /* LoginVC.swift in Sources */,
 				0459BC0128E4BAC3005DAC08 /* SignupVC.swift in Sources */,
