@@ -11,39 +11,37 @@ import SnapKit
 class HomeVC: UIViewController {
     
     lazy private var tableView: UITableView = {
-        let table = UITableView()
-        table.frame = .zero
-        table.translatesAutoresizingMaskIntoConstraints = false
-        table.tableHeaderView = TableHeader(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: 300)))
+        let table = UITableView(frame: .zero, style: .grouped)
+        table.register(HomeTableCell.self, forCellReuseIdentifier: HomeTableCell.identifier)
+        table.tableHeaderView = TableHeader(frame: CGRect(origin: .zero, size: CGSize(width: view.bounds.width, height: 400)))
         return table
     }()
+    
+    lazy private var sectionTitles = ["IN THEATERS", "MOST POPULAR MOVIES", "MOST POPULAR TVS"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     private func setupView(){
-        view.backgroundColor = .systemBackground
+        
         title = "Home"
+        view.backgroundColor = .systemBackground
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(goToSettingsVC))
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = .label
         
         view.addSubview(tableView)
-        addConstraits()
+        setupTableView()
     }
     
-    private func addConstraits(){
+    private func setupTableView(){
         
         tableView.snp.makeConstraints { make in
-            make.centerX.equalTo(view.snp.centerX)
-            make.centerY.equalTo(view.snp.centerY)
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.left.equalTo(view.snp.left)
@@ -60,17 +58,11 @@ class HomeVC: UIViewController {
 extension HomeVC: UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        3
+        return sectionTitles.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section{
-            case 0: return "IN THEATERS"
-            case 1: return "MOST POPULAR MOVIES"
-            case 2: return "MOST POPULAR TVS"
-            default: break
-        }
-        return nil
+        return sectionTitles[section]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,20 +70,26 @@ extension HomeVC: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .systemMint
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableCell.identifier, for: indexPath) as? HomeTableCell else { return UITableViewCell() }
         return cell
     }
 }
 
 extension HomeVC: UITableViewDelegate{
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
     }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else {return}
+        header.textLabel?.textColor = .label
+        header.textLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
+    }
+
 }
 

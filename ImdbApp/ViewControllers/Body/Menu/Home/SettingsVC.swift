@@ -20,12 +20,11 @@ class SettingsVC: UIViewController {
         
         navigationController?.navigationBar.tintColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
+        navigationController?.navigationBar.tintColor = .label
     }
     
     @objc private func logout(){
         self.view.window?.rootViewController = StartVC()
         self.view.window?.makeKeyAndVisible()
     }
-    
-
 }

@@ -12,6 +12,8 @@ class MainVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBar.tintColor = .label
+        
         let homeVC = UINavigationController(rootViewController: HomeVC())
         let searchVC = UINavigationController(rootViewController: SearchVC())
         let downloadsVC = UINavigationController(rootViewController: DownloadsVC())
@@ -27,7 +29,7 @@ class MainVC: UITabBarController {
         downloadsVC.tabBarItem.image = UIImage(systemName: "arrow.down.circle")
         
         //Добавить viewControllers на TabBarController
-        viewControllers = [homeVC, searchVC, downloadsVC]
+        viewControllers = [homeVC,searchVC,downloadsVC]
         
     }
 

@@ -10,9 +10,8 @@ import SnapKit
 
 class TableHeader: UIView{
     
-    var imageView: UIImageView = {
+    lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
@@ -28,17 +27,16 @@ class TableHeader: UIView{
     private func setupView(){
         
         backgroundColor = .systemCyan
-        
-//        addSubview(imageView)
-//
-//        imageView.snp.makeConstraints { make in
-//            make.centerX.equalTo(self.snp.centerX)
-//            make.centerY.equalTo(self.snp.centerY)
-//            make.top.equalTo(self.snp.top)
-//            make.bottom.equalTo(self.snp.bottom)
-//            make.left.equalTo(self.snp.left)
-//            make.right.equalTo(self.snp.right)
-//        }
+    
+        addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.centerX.equalTo(self.snp.centerX)
+            make.centerY.equalTo(self.snp.centerY)
+            make.top.equalTo(self.snp.top)
+            make.bottom.equalTo(self.snp.bottom)
+            make.left.equalTo(self.snp.left)
+            make.right.equalTo(self.snp.right)
+        }
     }
 
 }
