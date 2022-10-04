@@ -16,16 +16,16 @@ class MainVC: UITabBarController {
          
         let homeVC = UINavigationController(rootViewController: HomeVC())
         let searchVC = UINavigationController(rootViewController: SearchVC())
-        let downloadsVC = UINavigationController(rootViewController: DownloadsVC())
+        let favouritesVC = UINavigationController(rootViewController: FavouritesVC())
         
         homeVC.tabBarItem.title = "Home"
         searchVC.tabBarItem.title = "Search"
-        downloadsVC.tabBarItem.title = "Downloads"
+        favouritesVC.tabBarItem.title = "Favourites"
         
         homeVC.tabBarItem.image = UIImage(systemName: "house")
         searchVC.tabBarItem.image = UIImage(systemName: "magnifyingglass")
-        downloadsVC.tabBarItem.image = UIImage(systemName: "arrow.down.circle")
+        favouritesVC.tabBarItem.image = UIImage(systemName: "star")
         
-        setViewControllers([homeVC], animated: true)
+        setViewControllers([homeVC, favouritesVC], animated: true)
     }
 }

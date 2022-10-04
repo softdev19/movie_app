@@ -54,12 +54,14 @@ class TableCell: UITableViewCell {
         }
     }
     
-    func configureCell(with videos: [Video]){
-        self.videos = videos
+    func configureCell(with data: [Video]){
+        self.videos = data
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
     }
+    
+     
 }
 
 
@@ -82,7 +84,6 @@ extension TableCell: UICollectionViewDataSource{
         else{
             cell.backgroundColor = .systemCyan
         }
-        
         return cell
     }
 }
@@ -91,4 +92,29 @@ extension TableCell: UICollectionViewDataSource{
 //MARK: --UICollectionViewDelegate
 extension TableCell: UICollectionViewDelegate{
 
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        let configuration = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+            
+            let addToFavourites = UIAction(title: "Add to favourites",
+                                           image: UIImage(systemName: "star"),
+                                           identifier: nil,
+                                           discoverabilityTitle: nil,
+                                           attributes: [],
+                                           state: .off) { _ in
+                print("Added to favourites")
+                //TODO: CoreData savings
+            }
+            
+            return UIMenu(title: "",
+                          subtitle: nil,
+                          image: nil,
+                          identifier: nil,
+                          options: UIMenu.Options.displayInline,
+                          children: [addToFavourites])
+        }
+         
+        return configuration
+    }
+    
 }

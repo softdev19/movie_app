@@ -1,5 +1,5 @@
 //
-//  DownloadsVC.swift
+//  FavouritesVC.swift
 //  ImdbApp
 //
 //  Created by Ivan Lyaskovets on 28.09.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DownloadsVC: UIViewController {
+class FavouritesVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
