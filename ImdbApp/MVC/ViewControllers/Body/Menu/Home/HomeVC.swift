@@ -10,28 +10,29 @@ import SnapKit
 
 class HomeVC: UIViewController {
     
+    //MARK: --Properties
+    private let apiManager = APIManager.shared
+    
     lazy private var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(TableCell.self, forCellReuseIdentifier: TableCell.identifier)
         return table
     }()
     
-    lazy private var tableHeaderView: UIView = {
-        let view = TableHeader(frame: CGRect(origin: .zero, size: CGSize(width: view.bounds.width, height: 400)))
+    lazy private var tableHeaderView: TableHeader = {
+        let view = TableHeader()
         return view
     }()
     
-    private let apiManager = APIManager.shared
-    
     lazy private var sectionTitles = ["IN THEATERS", "MOST POPULAR MOVIES", "MOST POPULAR TVS"]
 
+    //MARK: --Inits
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        tableView.dataSource = self
-        tableView.delegate = self
     }
     
+    //MARK: --Functions
     private func setupView(){
         
         title = "Home"
@@ -47,7 +48,11 @@ class HomeVC: UIViewController {
     
     private func setupTableView(){
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         tableView.tableHeaderView = tableHeaderView
+        setupTableHeader()
         
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -57,12 +62,31 @@ class HomeVC: UIViewController {
         }
     }
     
+    private func setupTableHeader(){
+        
+        tableHeaderView.frame = CGRect(origin: .zero, size: CGSize(width: view.bounds.width, height: 550))
+        
+        apiManager.getInTheatres { response in
+            switch response{
+                case .success(let videos):
+                    guard let video = videos.randomElement() else {return}
+                    if let imagePath = video.image{
+                        self.tableHeaderView.configure(with: imagePath)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
+    
     @objc private func goToSettingsVC(){
         navigationController?.pushViewController(SettingsVC(), animated: true)
     }
     
 }
 
+
+//MARK: --UITableViewDataSource
 extension HomeVC: UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -117,6 +141,8 @@ extension HomeVC: UITableViewDataSource{
     }
 }
 
+
+//MARK: --UITableViewDelegate
 extension HomeVC: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
