@@ -1,5 +1,6 @@
 Final OTUS study project
 
 1. Programmatic UI (UIKit)
-2. Using AVPlayer
-3. Using SnapKit for layout
+2. AVPlayer
+3. SnapKit for layout
+4. SDWebImage for asynchronous downloading and caching images
