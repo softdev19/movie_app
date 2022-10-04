@@ -18,17 +18,14 @@ class MainVC: UITabBarController {
         let searchVC = UINavigationController(rootViewController: SearchVC())
         let downloadsVC = UINavigationController(rootViewController: DownloadsVC())
         
-        //Добавить название
         homeVC.tabBarItem.title = "Home"
         searchVC.tabBarItem.title = "Search"
         downloadsVC.tabBarItem.title = "Downloads"
         
-        //Добавить картинку
         homeVC.tabBarItem.image = UIImage(systemName: "house")
         searchVC.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         downloadsVC.tabBarItem.image = UIImage(systemName: "arrow.down.circle")
         
-        //Добавить viewControllers на TabBarController
         setViewControllers([homeVC], animated: true)
     }
 }

@@ -16,7 +16,7 @@ class HomeVC: UIViewController {
         return table
     }()
     
-    lazy private var tableHeaderView: UIView = {
+    lazy private var tableHeaderView: TableHeader = {
         let view = TableHeader(frame: CGRect(origin: .zero, size: CGSize(width: view.bounds.width, height: 400)))
         return view
     }()
@@ -28,8 +28,6 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        tableView.dataSource = self
-        tableView.delegate = self
     }
     
     private func setupView(){
@@ -47,13 +45,32 @@ class HomeVC: UIViewController {
     
     private func setupTableView(){
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         tableView.tableHeaderView = tableHeaderView
+        setupTableHeader()
         
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.left.equalTo(view.snp.left)
             make.right.equalTo(view.snp.right)
+        }
+    }
+    
+    private func setupTableHeader(){
+        
+        apiManager.getMostPopularMovies { response in
+            switch response{
+                case .success(let videos):
+                    guard let video = videos.randomElement() else {return}
+                    if let imagePath = video.image{
+                        self.tableHeaderView.configure(with: imagePath)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
         }
     }
     
