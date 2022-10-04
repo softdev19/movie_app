@@ -18,7 +18,7 @@
 		0459BBF128E4B348005DAC08 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0459BBF028E4B348005DAC08 /* .gitignore */; };
 		0459BBF528E4B632005DAC08 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBF428E4B632005DAC08 /* MainVC.swift */; };
 		0459BBF728E4B806005DAC08 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBF628E4B806005DAC08 /* SearchVC.swift */; };
-		0459BBF928E4B818005DAC08 /* DownloadsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBF828E4B818005DAC08 /* DownloadsVC.swift */; };
+		0459BBF928E4B818005DAC08 /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBF828E4B818005DAC08 /* FavouritesVC.swift */; };
 		0459BBFD28E4BA93005DAC08 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBFC28E4BA93005DAC08 /* StartVC.swift */; };
 		0459BBFF28E4BAA7005DAC08 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBFE28E4BAA7005DAC08 /* LoginVC.swift */; };
 		0459BC0128E4BAC3005DAC08 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BC0028E4BAC3005DAC08 /* SignupVC.swift */; };
@@ -50,7 +50,7 @@
 		0459BBF028E4B348005DAC08 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0459BBF428E4B632005DAC08 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		0459BBF628E4B806005DAC08 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
-		0459BBF828E4B818005DAC08 /* DownloadsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsVC.swift; sourceTree = "<group>"; };
+		0459BBF828E4B818005DAC08 /* FavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
 		0459BBFC28E4BA93005DAC08 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		0459BBFE28E4BAA7005DAC08 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		0459BC0028E4BAC3005DAC08 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 			children = (
 				0415D6B028E74FDC00BE4763 /* Home */,
 				0415D6B228E7660800BE4763 /* Search */,
-				0415D6B328E7661000BE4763 /* Downloads */,
+				0415D6B328E7661000BE4763 /* Favourites */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -132,12 +132,12 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		0415D6B328E7661000BE4763 /* Downloads */ = {
+		0415D6B328E7661000BE4763 /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
-				0459BBF828E4B818005DAC08 /* DownloadsVC.swift */,
+				0459BBF828E4B818005DAC08 /* FavouritesVC.swift */,
 			);
-			path = Downloads;
+			path = Favourites;
 			sourceTree = "<group>";
 		};
 		0459BBCB28E4B01E005DAC08 = {
@@ -360,7 +360,7 @@
 				0459BBF528E4B632005DAC08 /* MainVC.swift in Sources */,
 				0459BBE228E4B01F005DAC08 /* ImdbApp.xcdatamodeld in Sources */,
 				0415D6AA28E7229700BE4763 /* TableHeader.swift in Sources */,
-				0459BBF928E4B818005DAC08 /* DownloadsVC.swift in Sources */,
+				0459BBF928E4B818005DAC08 /* FavouritesVC.swift in Sources */,
 				0415D6AD28E7314F00BE4763 /* TableCell.swift in Sources */,
 				0459BBFF28E4BAA7005DAC08 /* LoginVC.swift in Sources */,
 				0459BC0128E4BAC3005DAC08 /* SignupVC.swift in Sources */,
