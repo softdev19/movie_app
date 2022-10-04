@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeTableCell: UITableViewCell {
+class TableCell: UITableViewCell {
 
     //MARK: --Properties
     public static let identifier = "tableCell"
@@ -20,7 +20,7 @@ class HomeTableCell: UITableViewCell {
         //CV
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(CollectionCell.self, forCellWithReuseIdentifier: CollectionCell.identifier)
         return collectionView
     }()
 
@@ -55,7 +55,7 @@ class HomeTableCell: UITableViewCell {
 
 
 //MARK: --UICollectionViewDataSource
-extension HomeTableCell: UICollectionViewDataSource{
+extension TableCell: UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -66,7 +66,7 @@ extension HomeTableCell: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionCell.identifier, for: indexPath) as? CollectionCell else {return UICollectionViewCell()}
         cell.backgroundColor = .systemCyan
         return cell
     }
@@ -74,6 +74,6 @@ extension HomeTableCell: UICollectionViewDataSource{
 
 
 //MARK: --UICollectionViewDelegate
-extension HomeTableCell: UICollectionViewDelegate{
+extension TableCell: UICollectionViewDelegate{
 
 }

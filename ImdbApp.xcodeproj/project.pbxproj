@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0415D6AA28E7229700BE4763 /* TableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415D6A928E7229700BE4763 /* TableHeader.swift */; };
-		0415D6AD28E7314F00BE4763 /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415D6AC28E7314F00BE4763 /* HomeTableCell.swift */; };
+		0415D6AD28E7314F00BE4763 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415D6AC28E7314F00BE4763 /* TableCell.swift */; };
 		0459BBD828E4B01E005DAC08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBD728E4B01E005DAC08 /* AppDelegate.swift */; };
 		0459BBDA28E4B01E005DAC08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBD928E4B01E005DAC08 /* SceneDelegate.swift */; };
 		0459BBDC28E4B01E005DAC08 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459BBDB28E4B01E005DAC08 /* HomeVC.swift */; };
@@ -30,11 +30,12 @@
 		04631E2D28E4E05100252F9B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 04631E2C28E4E05100252F9B /* FirebaseFirestore */; };
 		04631E3128E4E3DF00252F9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04631E3028E4E3DF00252F9B /* GoogleService-Info.plist */; };
 		04631E3328E4E58800252F9B /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04631E3228E4E58800252F9B /* SettingsVC.swift */; };
+		04AADD3228EC2982006B001A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3128EC2982006B001A /* CollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0415D6A928E7229700BE4763 /* TableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeader.swift; sourceTree = "<group>"; };
-		0415D6AC28E7314F00BE4763 /* HomeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
+		0415D6AC28E7314F00BE4763 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		0459BBD428E4B01E005DAC08 /* ImdbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImdbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0459BBD728E4B01E005DAC08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0459BBD928E4B01E005DAC08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		04631E2128E4D0A100252F9B /* bg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bg.mp4; sourceTree = "<group>"; };
 		04631E3028E4E3DF00252F9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04631E3228E4E58800252F9B /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		04AADD3128EC2982006B001A /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,8 @@
 		0415D6AE28E7315600BE4763 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				0415D6AC28E7314F00BE4763 /* HomeTableCell.swift */,
+				0415D6AC28E7314F00BE4763 /* TableCell.swift */,
+				04AADD3128EC2982006B001A /* CollectionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -308,10 +311,11 @@
 				0459BBE228E4B01F005DAC08 /* ImdbApp.xcdatamodeld in Sources */,
 				0415D6AA28E7229700BE4763 /* TableHeader.swift in Sources */,
 				0459BBF928E4B818005DAC08 /* DownloadsVC.swift in Sources */,
-				0415D6AD28E7314F00BE4763 /* HomeTableCell.swift in Sources */,
+				0415D6AD28E7314F00BE4763 /* TableCell.swift in Sources */,
 				0459BBFF28E4BAA7005DAC08 /* LoginVC.swift in Sources */,
 				0459BC0128E4BAC3005DAC08 /* SignupVC.swift in Sources */,
 				0459BBD828E4B01E005DAC08 /* AppDelegate.swift in Sources */,
+				04AADD3228EC2982006B001A /* CollectionCell.swift in Sources */,
 				0459BBDA28E4B01E005DAC08 /* SceneDelegate.swift in Sources */,
 				0459BBFD28E4BA93005DAC08 /* StartVC.swift in Sources */,
 			);

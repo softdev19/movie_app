@@ -29,6 +29,6 @@ class MainVC: UITabBarController {
         downloadsVC.tabBarItem.image = UIImage(systemName: "arrow.down.circle")
         
         //Добавить viewControllers на TabBarController
-        setViewControllers([homeVC,searchVC,downloadsVC], animated: true)
+        setViewControllers([homeVC], animated: true)
     }
 }

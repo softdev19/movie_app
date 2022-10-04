@@ -12,7 +12,7 @@ class HomeVC: UIViewController {
     
     lazy private var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
-        table.register(HomeTableCell.self, forCellReuseIdentifier: HomeTableCell.identifier)
+        table.register(TableCell.self, forCellReuseIdentifier: TableCell.identifier)
         return table
     }()
     
@@ -76,7 +76,7 @@ extension HomeVC: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableCell.identifier, for: indexPath) as? HomeTableCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableCell.identifier, for: indexPath) as? TableCell else { return UITableViewCell() }
         return cell
     }
 }
