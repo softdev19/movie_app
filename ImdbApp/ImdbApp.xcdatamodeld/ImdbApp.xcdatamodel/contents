@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CoreVideo" representedClassName="CoreVideo" syncable="YES" codeGenerationType="class">
+        <attribute name="image" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="year" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CoreVideo" positionX="-45" positionY="0" width="128" height="74"/>
+    </elements>
 </model>

@@ -34,6 +34,7 @@
 		04AADD3E28EC34B1006B001A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3D28EC34B1006B001A /* APIManager.swift */; };
 		04AADD4028EC36B7006B001A /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3F28EC36B7006B001A /* Video.swift */; };
 		04AADD4328EC46CC006B001A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 04AADD4228EC46CC006B001A /* SDWebImage */; };
+		04AADD4828EC6D04006B001A /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD4728EC6D04006B001A /* LocalDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		04AADD3128EC2982006B001A /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		04AADD3D28EC34B1006B001A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		04AADD3F28EC36B7006B001A /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		04AADD4728EC6D04006B001A /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,8 +266,17 @@
 		04AADD3C28EC347E006B001A /* LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
+				04AADD4D28EC6E61006B001A /* Model */,
+				04AADD4728EC6D04006B001A /* LocalDataManager.swift */,
 			);
 			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		04AADD4D28EC6E61006B001A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +378,7 @@
 				0459BBD828E4B01E005DAC08 /* AppDelegate.swift in Sources */,
 				04AADD3228EC2982006B001A /* CollectionCell.swift in Sources */,
 				04AADD3E28EC34B1006B001A /* APIManager.swift in Sources */,
+				04AADD4828EC6D04006B001A /* LocalDataManager.swift in Sources */,
 				04AADD4028EC36B7006B001A /* Video.swift in Sources */,
 				0459BBDA28E4B01E005DAC08 /* SceneDelegate.swift in Sources */,
 				0459BBFD28E4BA93005DAC08 /* StartVC.swift in Sources */,
