@@ -31,6 +31,8 @@
 		04631E3128E4E3DF00252F9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04631E3028E4E3DF00252F9B /* GoogleService-Info.plist */; };
 		04631E3328E4E58800252F9B /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04631E3228E4E58800252F9B /* SettingsVC.swift */; };
 		04AADD3228EC2982006B001A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3128EC2982006B001A /* CollectionCell.swift */; };
+		04AADD3E28EC34B1006B001A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3D28EC34B1006B001A /* APIManager.swift */; };
+		04AADD4028EC36B7006B001A /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3F28EC36B7006B001A /* Video.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		04631E3028E4E3DF00252F9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04631E3228E4E58800252F9B /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		04AADD3128EC2982006B001A /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		04AADD3D28EC34B1006B001A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		04AADD3F28EC36B7006B001A /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +162,8 @@
 				04631E3028E4E3DF00252F9B /* GoogleService-Info.plist */,
 				0459BBE028E4B01F005DAC08 /* ImdbApp.xcdatamodeld */,
 				0459BBEE28E4B0DE005DAC08 /* App */,
-				0415D6AB28E722A000BE4763 /* Views */,
-				0459BBFA28E4B823005DAC08 /* ViewControllers */,
+				04AADD3528EC2F4C006B001A /* Services */,
+				04AADD3B28EC3473006B001A /* MVC */,
 			);
 			path = ImdbApp;
 			sourceTree = "<group>";
@@ -218,6 +222,48 @@
 				04631E2128E4D0A100252F9B /* bg.mp4 */,
 			);
 			path = Media;
+			sourceTree = "<group>";
+		};
+		04AADD3528EC2F4C006B001A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04AADD3C28EC347E006B001A /* LocalStorage */,
+				04AADD3628EC2F59006B001A /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		04AADD3628EC2F59006B001A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				04AADD3D28EC34B1006B001A /* APIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		04AADD3928EC31F4006B001A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04AADD3F28EC36B7006B001A /* Video.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04AADD3B28EC3473006B001A /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				0415D6AB28E722A000BE4763 /* Views */,
+				04AADD3928EC31F4006B001A /* Model */,
+				0459BBFA28E4B823005DAC08 /* ViewControllers */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		04AADD3C28EC347E006B001A /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +362,8 @@
 				0459BC0128E4BAC3005DAC08 /* SignupVC.swift in Sources */,
 				0459BBD828E4B01E005DAC08 /* AppDelegate.swift in Sources */,
 				04AADD3228EC2982006B001A /* CollectionCell.swift in Sources */,
+				04AADD3E28EC34B1006B001A /* APIManager.swift in Sources */,
+				04AADD4028EC36B7006B001A /* Video.swift in Sources */,
 				0459BBDA28E4B01E005DAC08 /* SceneDelegate.swift in Sources */,
 				0459BBFD28E4BA93005DAC08 /* StartVC.swift in Sources */,
 			);
