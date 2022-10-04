@@ -13,8 +13,12 @@ class HomeVC: UIViewController {
     lazy private var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(HomeTableCell.self, forCellReuseIdentifier: HomeTableCell.identifier)
-        table.tableHeaderView = TableHeader(frame: CGRect(origin: .zero, size: CGSize(width: view.bounds.width, height: 400)))
         return table
+    }()
+    
+    lazy private var tableHeaderView: UIView = {
+        let view = TableHeader(frame: CGRect(origin: .zero, size: CGSize(width: view.bounds.width, height: 400)))
+        return view
     }()
     
     lazy private var sectionTitles = ["IN THEATERS", "MOST POPULAR MOVIES", "MOST POPULAR TVS"]
@@ -40,6 +44,8 @@ class HomeVC: UIViewController {
     }
     
     private func setupTableView(){
+        
+        tableView.tableHeaderView = tableHeaderView
         
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
