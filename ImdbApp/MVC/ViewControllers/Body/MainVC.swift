@@ -13,7 +13,7 @@ class MainVC: UITabBarController {
         super.viewDidLoad()
         
         tabBar.tintColor = .label
-        
+         
         let homeVC = UINavigationController(rootViewController: HomeVC())
         let searchVC = UINavigationController(rootViewController: SearchVC())
         let downloadsVC = UINavigationController(rootViewController: DownloadsVC())

@@ -10,6 +10,9 @@ import SnapKit
 
 class HomeVC: UIViewController {
     
+    //MARK: --Properties
+    private let apiManager = APIManager.shared
+    
     lazy private var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(TableCell.self, forCellReuseIdentifier: TableCell.identifier)
@@ -17,19 +20,19 @@ class HomeVC: UIViewController {
     }()
     
     lazy private var tableHeaderView: TableHeader = {
-        let view = TableHeader(frame: CGRect(origin: .zero, size: CGSize(width: view.bounds.width, height: 400)))
+        let view = TableHeader()
         return view
     }()
     
-    private let apiManager = APIManager.shared
-    
     lazy private var sectionTitles = ["IN THEATERS", "MOST POPULAR MOVIES", "MOST POPULAR TVS"]
 
+    //MARK: --Inits
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
+    //MARK: --Functions
     private func setupView(){
         
         title = "Home"
@@ -61,7 +64,9 @@ class HomeVC: UIViewController {
     
     private func setupTableHeader(){
         
-        apiManager.getMostPopularMovies { response in
+        tableHeaderView.frame = CGRect(origin: .zero, size: CGSize(width: view.bounds.width, height: 550))
+        
+        apiManager.getInTheatres { response in
             switch response{
                 case .success(let videos):
                     guard let video = videos.randomElement() else {return}
@@ -80,6 +85,8 @@ class HomeVC: UIViewController {
     
 }
 
+
+//MARK: --UITableViewDataSource
 extension HomeVC: UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -134,6 +141,8 @@ extension HomeVC: UITableViewDataSource{
     }
 }
 
+
+//MARK: --UITableViewDelegate
 extension HomeVC: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

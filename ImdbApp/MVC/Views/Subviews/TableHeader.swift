@@ -14,6 +14,7 @@ class TableHeader: UIView{
     //MARK: --Properties
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.clipsToBounds = true
         return imageView
     }()
     
