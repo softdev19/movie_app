@@ -7,16 +7,18 @@
 
 import Foundation
 
-private enum APIError: Error{
-    case FailedToGetData
-}
+
 
 final class APIManager{
+    
+    private enum APIError: Error{
+        case FailedToGetData
+    }
     
     static let shared = APIManager()
     
     private let mainUrl = "https://imdb-api.com/en/API/"
-    private let apiKey = "k_16raxqmh"
+    private let apiKey = "k_m8tol6b3"
     
     private init(){}
     

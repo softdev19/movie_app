@@ -61,7 +61,6 @@ class TableCell: UITableViewCell {
         }
     }
     
-     
 }
 
 
@@ -103,7 +102,9 @@ extension TableCell: UICollectionViewDelegate{
                                            attributes: [],
                                            state: .off) { _ in
                 print("Added to favourites")
-                //TODO: CoreData savings
+                //TODO: NOTIFICATION FOR FAVOURITESVC TO REFETCH DATA FROM CORE DATA!
+                let video = self.videos[indexPath.item]
+                LocalDataManager.shared.addData(with: video)
             }
             
             return UIMenu(title: "",

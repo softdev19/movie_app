@@ -16,11 +16,28 @@ class FavouritesVC: UIViewController {
         return table
     }()
     
-    private var videos: [Video] = []
+    private var videos: [CoreVideo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
+        fetchDataFromLocalStorage()
+    }
+    
+    private func fetchDataFromLocalStorage(){
+        
+        LocalDataManager.shared.fetchData { response in
+            switch response{
+            case .success(let videos):
+                self.videos = videos
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 
     private func setupView(){
@@ -47,22 +64,45 @@ class FavouritesVC: UIViewController {
 }
 
 extension FavouritesVC: UITableViewDataSource{
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return videos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favouriteCell", for: indexPath)
+        cell.textLabel?.text = "\(videos[indexPath.row].title)"
         return cell
     }
 }
 
 extension FavouritesVC: UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: {_,_,_ in
+            LocalDataManager.shared.deleteData(video: self.videos[indexPath.row]) { response in
+                switch response{
+                    case .success(): return
+                    case .failure(let error): print(error.localizedDescription)
+                }
+            }
+            
+            self.fetchDataFromLocalStorage()
+        })
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
