@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct CategoryResponse: Codable{
+struct APIResponse: Codable{
     let items: [Video]
 }
 
 struct Video: Codable{
     let title: String
     let year: String
-    let image: String
+    let image: String?
 }

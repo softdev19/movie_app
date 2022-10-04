@@ -23,6 +23,8 @@ class TableCell: UITableViewCell {
         collectionView.register(CollectionCell.self, forCellWithReuseIdentifier: CollectionCell.identifier)
         return collectionView
     }()
+    
+    private var videos: [Video] = []
 
     //MARK: --Inits
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -51,6 +53,13 @@ class TableCell: UITableViewCell {
             make.right.equalTo(contentView.snp.right)
         }
     }
+    
+    func configureCell(with videos: [Video]){
+        self.videos = videos
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 
@@ -62,12 +71,18 @@ extension TableCell: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return videos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionCell.identifier, for: indexPath) as? CollectionCell else {return UICollectionViewCell()}
-        cell.backgroundColor = .systemCyan
+        if let imagePath = videos[indexPath.item].image{
+            cell.configureCell(with: imagePath)
+        }
+        else{
+            cell.backgroundColor = .systemCyan
+        }
+        
         return cell
     }
 }

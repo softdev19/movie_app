@@ -21,6 +21,8 @@ class HomeVC: UIViewController {
         return view
     }()
     
+    private let apiManager = APIManager.shared
+    
     lazy private var sectionTitles = ["IN THEATERS", "MOST POPULAR MOVIES", "MOST POPULAR TVS"]
 
     override func viewDidLoad() {
@@ -76,7 +78,41 @@ extension HomeVC: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TableCell.identifier, for: indexPath) as? TableCell else { return UITableViewCell() }
+        
+        switch indexPath.section{
+            
+            case 0:
+                apiManager.getInTheatres { response in
+                    switch response{
+                        case .success(let videos):
+                            cell.configureCell(with: videos)
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                    }
+                }
+            case 1:
+                apiManager.getMostPopularMovies { response in
+                    switch response{
+                        case .success(let videos):
+                            cell.configureCell(with: videos)
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                    }
+                }
+            case 2:
+                apiManager.getMostPopularTVs { response in
+                    switch response{
+                        case .success(let videos):
+                            cell.configureCell(with: videos)
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                    }
+                }
+            default: break
+            }
+        
         return cell
     }
 }

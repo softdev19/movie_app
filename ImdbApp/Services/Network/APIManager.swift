@@ -21,6 +21,7 @@ final class APIManager{
     private init(){}
     
     func getMostPopularMovies(completionHandler: @escaping(Result<[Video], Error>)->Void){
+        
         let stringUrl = "\(mainUrl)MostPopularMovies/\(apiKey)"
         guard let url = URL(string: stringUrl) else { return }
         let request = URLRequest(url: url)
@@ -33,16 +34,18 @@ final class APIManager{
             
             guard let data = data else { return}
             do{
-                let results = try JSONDecoder().decode(CategoryResponse.self, from: data)
+                let results = try JSONDecoder().decode(APIResponse.self, from: data)
                 completionHandler(.success(results.items))
             }
             catch{
                 completionHandler(.failure(APIError.FailedToGetData))
             }
         }
+        task.resume()
     }
     
     func getMostPopularTVs(completionHandler: @escaping(Result<[Video], Error>)->Void){
+        
         let stringUrl = "\(mainUrl)MostPopularTVs/\(apiKey)"
         guard let url = URL(string: stringUrl) else { return }
         let request = URLRequest(url: url)
@@ -55,16 +58,18 @@ final class APIManager{
             
             guard let data = data else { return}
             do{
-                let results = try JSONDecoder().decode(CategoryResponse.self, from: data)
+                let results = try JSONDecoder().decode(APIResponse.self, from: data)
                 completionHandler(.success(results.items))
             }
             catch{
                 completionHandler(.failure(APIError.FailedToGetData))
             }
         }
+        task.resume()
     }
     
     func getInTheatres(completionHandler: @escaping(Result<[Video], Error>)->Void){
+        
         let stringUrl = "\(mainUrl)InTheaters/\(apiKey)"
         guard let url = URL(string: stringUrl) else { return }
         let request = URLRequest(url: url)
@@ -77,13 +82,14 @@ final class APIManager{
             
             guard let data = data else { return}
             do{
-                let results = try JSONDecoder().decode(CategoryResponse.self, from: data)
+                let results = try JSONDecoder().decode(APIResponse.self, from: data)
                 completionHandler(.success(results.items))
             }
             catch{
                 completionHandler(.failure(APIError.FailedToGetData))
             }
         }
+        task.resume()
     }
     
 }
