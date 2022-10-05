@@ -83,5 +83,29 @@ extension ResultsVC: UICollectionViewDataSource{
 
 extension ResultsVC: UICollectionViewDelegate{
     
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        let config = UIContextMenuConfiguration(identifier: nil,
+                                                previewProvider: nil) { _ in
+            let addToFavourites = UIAction(title: "Add to favourites",
+                                           image: UIImage(systemName: "star"),
+                                           identifier: nil,
+                                           discoverabilityTitle: nil,
+                                           attributes: [],
+                                           state: .off) { _ in
+                let video = self.videos[indexPath.item]
+                LocalDataManager.shared.addData(with: video)
+                NotificationCenter.default.post(name: NSNotification.Name("AddToFavourites"), object: nil)
+            }
+            
+            return UIMenu(title: "",
+                          subtitle: nil,
+                          image: nil,
+                          identifier: nil,
+                          options: .displayInline,
+                          children: [addToFavourites])
+        }
+        return config
+    }
 }
 
