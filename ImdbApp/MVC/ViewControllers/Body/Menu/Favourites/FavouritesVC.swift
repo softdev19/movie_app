@@ -12,7 +12,7 @@ class FavouritesVC: UIViewController {
     
     lazy private var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .plain)
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "favouriteCell")
+        table.register(FavouriteCell.self, forCellReuseIdentifier: FavouriteCell.identifier)
         return table
     }()
     
@@ -26,7 +26,6 @@ class FavouritesVC: UIViewController {
     }
     
     private func fetchDataFromLocalStorage(){
-        
         LocalDataManager.shared.fetchData { response in
             switch response{
             case .success(let videos):
@@ -74,8 +73,9 @@ extension FavouritesVC: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "favouriteCell", for: indexPath)
-        cell.textLabel?.text = "\(videos[indexPath.row].title)"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FavouriteCell.identifier, for: indexPath) as? FavouriteCell else {return UITableViewCell()}
+        let video = videos[indexPath.row]
+        cell.configureCell(with: video)
         return cell
     }
 }
@@ -83,7 +83,7 @@ extension FavouritesVC: UITableViewDataSource{
 extension FavouritesVC: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 180
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
