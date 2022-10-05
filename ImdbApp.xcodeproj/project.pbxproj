@@ -36,6 +36,7 @@
 		04AADD4328EC46CC006B001A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 04AADD4228EC46CC006B001A /* SDWebImage */; };
 		04AADD4828EC6D04006B001A /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD4728EC6D04006B001A /* LocalDataManager.swift */; };
 		04AADD5728EC90CA006B001A /* FavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD5628EC90CA006B001A /* FavouriteCell.swift */; };
+		04C5FCCA28ED9E7E00102B74 /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C5FCC928ED9E7E00102B74 /* ResultsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		04AADD3F28EC36B7006B001A /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		04AADD4728EC6D04006B001A /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
 		04AADD5628EC90CA006B001A /* FavouriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavouriteCell.swift; path = ImdbApp/MVC/Views/Cells/FavouriteCell.swift; sourceTree = SOURCE_ROOT; };
+		04C5FCC928ED9E7E00102B74 /* ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				0459BBF628E4B806005DAC08 /* SearchVC.swift */,
+				04C5FCC928ED9E7E00102B74 /* ResultsVC.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				0415D6AD28E7314F00BE4763 /* TableCell.swift in Sources */,
 				0459BBFF28E4BAA7005DAC08 /* LoginVC.swift in Sources */,
 				0459BC0128E4BAC3005DAC08 /* SignupVC.swift in Sources */,
+				04C5FCCA28ED9E7E00102B74 /* ResultsVC.swift in Sources */,
 				0459BBD828E4B01E005DAC08 /* AppDelegate.swift in Sources */,
 				04AADD3228EC2982006B001A /* CollectionCell.swift in Sources */,
 				04AADD3E28EC34B1006B001A /* APIManager.swift in Sources */,

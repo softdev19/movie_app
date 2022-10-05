@@ -94,6 +94,26 @@ final class APIManager{
         task.resume()
     }
     
+    func search(with query: String, completion: @escaping(Result<[Video], Error>)->Void){
+        
+        guard let url = URL(string: "https://imdb-api.com/API/SearchTitle/\(apiKey)/\(query)") else { return }
+        
+        let urlRequest = URLRequest(url: url)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
+            
+            guard let data = data, error == nil else { return }
+            
+            do{
+                let results = try JSONDecoder().decode(SearchResponse.self, from: data)
+                completion(.success(results.results))
+            }
+            catch{
+                completion(.failure(APIError.FailedToGetData))
+            }
+        }
+        task.resume()
+    }
+    
 }
 
 
