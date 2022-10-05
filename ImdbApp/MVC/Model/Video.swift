@@ -11,8 +11,12 @@ struct APIResponse: Codable{
     let items: [Video]
 }
 
+struct SearchResponse: Codable{
+    let results: [Video]
+}
+
 struct Video: Codable{
     let title: String
-    let year: String
+    let year: String?
     let image: String?
 }

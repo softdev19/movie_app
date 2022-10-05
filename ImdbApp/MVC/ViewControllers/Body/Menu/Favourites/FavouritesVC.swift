@@ -21,11 +21,16 @@ class FavouritesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
         fetchDataFromLocalStorage()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchDataFromLocalStorage), name: NSNotification.Name("AddToFavourites"), object: nil)
     }
     
-    private func fetchDataFromLocalStorage(){
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    @objc private func fetchDataFromLocalStorage(){
         LocalDataManager.shared.fetchData { response in
             switch response{
             case .success(let videos):
@@ -95,7 +100,6 @@ extension FavouritesVC: UITableViewDelegate{
                     case .failure(let error): print(error.localizedDescription)
                 }
             }
-            
             self.fetchDataFromLocalStorage()
         })
         
@@ -104,5 +108,6 @@ extension FavouritesVC: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        //TODO: Segue to DetailVideoVC
     }
 }

@@ -61,6 +61,8 @@ class TableCell: UITableViewCell {
         }
     }
     
+    
+    
 }
 
 
@@ -95,6 +97,7 @@ extension TableCell: UICollectionViewDelegate{
         
         let configuration = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
             
+            //TODO: Create Remove From Favourites in menu
             let addToFavourites = UIAction(title: "Add to favourites",
                                            image: UIImage(systemName: "star"),
                                            identifier: nil,
@@ -102,9 +105,9 @@ extension TableCell: UICollectionViewDelegate{
                                            attributes: [],
                                            state: .off) { _ in
                 print("Added to favourites")
-                //TODO: NOTIFICATION FOR FAVOURITESVC TO REFETCH DATA FROM CORE DATA!
                 let video = self.videos[indexPath.item]
                 LocalDataManager.shared.addData(with: video)
+                NotificationCenter.default.post(name: NSNotification.Name("AddToFavourites"), object: nil)
             }
             
             return UIMenu(title: "",
