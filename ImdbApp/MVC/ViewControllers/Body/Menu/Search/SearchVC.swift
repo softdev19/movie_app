@@ -33,6 +33,8 @@ extension SearchVC: UISearchResultsUpdating{
         guard let text = searchController.searchBar.text, !text.trimmingCharacters(in: .whitespaces).isEmpty, text.trimmingCharacters(in: .whitespaces).count >= 3 else {return}
         guard let vc = searchController.searchResultsController as? ResultsVC else {return}
         
+        vc.delegate = self
+        
         APIManager.shared.search(with: text) { response in
             switch response{
                 case .success(let videos):
@@ -45,9 +47,17 @@ extension SearchVC: UISearchResultsUpdating{
             }
         }
     }
+}
+
+extension SearchVC: ResultCellDelegate{
     
-    
-    
+    func cellTapped(with model: DetailedVideoModel) {
+        DispatchQueue.main.async {
+            let vc = DetailedVideoVC()
+            vc.configureView(with: model)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
 }
 

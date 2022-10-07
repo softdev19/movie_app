@@ -31,9 +31,9 @@
 		04631E3128E4E3DF00252F9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04631E3028E4E3DF00252F9B /* GoogleService-Info.plist */; };
 		04631E3328E4E58800252F9B /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04631E3228E4E58800252F9B /* SettingsVC.swift */; };
 		0489911528F039830025947B /* YoutubeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489911428F039830025947B /* YoutubeResponseModel.swift */; };
-		0489911D28F04CE40025947B /* DetailedVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489911C28F04CE40025947B /* DetailedVideoModel.swift */; };
 		0489911F28F054F50025947B /* DetailedVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489911E28F054F50025947B /* DetailedVideoVC.swift */; };
 		0489912228F05E100025947B /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 0489912128F05E100025947B /* YouTubeiOSPlayerHelper */; };
+		0489912A28F06BB60025947B /* DetailedVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489912928F06BB60025947B /* DetailedVideoModel.swift */; };
 		04AADD3228EC2982006B001A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3128EC2982006B001A /* CollectionCell.swift */; };
 		04AADD3E28EC34B1006B001A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3D28EC34B1006B001A /* APIManager.swift */; };
 		04AADD4028EC36B7006B001A /* ApiResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3F28EC36B7006B001A /* ApiResponseModel.swift */; };
@@ -65,8 +65,8 @@
 		04631E3028E4E3DF00252F9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04631E3228E4E58800252F9B /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		0489911428F039830025947B /* YoutubeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeResponseModel.swift; sourceTree = "<group>"; };
-		0489911C28F04CE40025947B /* DetailedVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedVideoModel.swift; sourceTree = "<group>"; };
 		0489911E28F054F50025947B /* DetailedVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailedVideoVC.swift; path = ImdbApp/MVC/ViewControllers/Body/DetailedVideoVC.swift; sourceTree = SOURCE_ROOT; };
+		0489912928F06BB60025947B /* DetailedVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedVideoModel.swift; sourceTree = "<group>"; };
 		04AADD3128EC2982006B001A /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		04AADD3D28EC34B1006B001A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		04AADD3F28EC36B7006B001A /* ApiResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseModel.swift; sourceTree = "<group>"; };
@@ -265,7 +265,7 @@
 			children = (
 				0489911428F039830025947B /* YoutubeResponseModel.swift */,
 				04AADD3F28EC36B7006B001A /* ApiResponseModel.swift */,
-				0489911C28F04CE40025947B /* DetailedVideoModel.swift */,
+				0489912928F06BB60025947B /* DetailedVideoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -384,10 +384,10 @@
 				0459BBE228E4B01F005DAC08 /* ImdbApp.xcdatamodeld in Sources */,
 				0415D6AA28E7229700BE4763 /* TableHeader.swift in Sources */,
 				0459BBF928E4B818005DAC08 /* FavouritesVC.swift in Sources */,
-				0489911D28F04CE40025947B /* DetailedVideoModel.swift in Sources */,
 				0415D6AD28E7314F00BE4763 /* TableCell.swift in Sources */,
 				0459BBFF28E4BAA7005DAC08 /* LoginVC.swift in Sources */,
 				0459BC0128E4BAC3005DAC08 /* SignupVC.swift in Sources */,
+				0489912A28F06BB60025947B /* DetailedVideoModel.swift in Sources */,
 				04C5FCCA28ED9E7E00102B74 /* ResultsVC.swift in Sources */,
 				0459BBD828E4B01E005DAC08 /* AppDelegate.swift in Sources */,
 				04AADD3228EC2982006B001A /* CollectionCell.swift in Sources */,
