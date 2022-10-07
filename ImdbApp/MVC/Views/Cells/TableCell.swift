@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol CellDelegate: AnyObject{
+    func CellDidTapped(_ cell: TableCell, with model: DetailedVideoModel)
+}
+
 class TableCell: UITableViewCell {
 
     //MARK: --Properties
     public static let identifier = "tableCell"
+    
+    weak var delegate: CellDelegate?
     
     lazy private var collectionView: UICollectionView = {
         //Layout
@@ -60,9 +66,6 @@ class TableCell: UITableViewCell {
             self.collectionView.reloadData()
         }
     }
-    
-    
-    
 }
 
 
@@ -96,18 +99,16 @@ extension TableCell: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let video = videos[indexPath.item]
+        guard let year = video.year else {return}
         
-        APIManager.shared.getDataFromYoutube(with: "\(video.title) \(video.year) trailer") { response in
+        APIManager.shared.getDataFromYoutube(with: "\(video.title) \(year) trailer") { response in
             switch response{
-            case .success(let urlVideo):
-                //TODO: Open DetailVideoVC
-                //TODO: Send video.title, video year, urlVideo to DetailVideoVC
-                return
+            case .success(let youtubeVideo):
+                self.delegate?.CellDidTapped(self, with: DetailedVideoModel(title: video.title, year: year, video: youtubeVideo.videoId))
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
-        
     }
 
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {

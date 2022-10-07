@@ -105,6 +105,8 @@ extension HomeVC: UITableViewDataSource{
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TableCell.identifier, for: indexPath) as? TableCell else { return UITableViewCell() }
         
+        cell.delegate = self
+        
         switch indexPath.section{
             
             case 0:
@@ -158,6 +160,17 @@ extension HomeVC: UITableViewDelegate{
         header.textLabel?.textColor = .label
         header.textLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
     }
+    
+}
 
+extension HomeVC: CellDelegate{
+    
+    func CellDidTapped(_ cell: TableCell, with model: DetailedVideoModel) {
+        DispatchQueue.main.async { 
+            let vc = DetailedVideoVC()
+            vc.configureView(with: model)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 

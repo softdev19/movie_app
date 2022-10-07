@@ -8,6 +8,10 @@
 import UIKit
 import SnapKit
 
+protocol ResultCellDelegate: AnyObject{
+    func cellTapped(with model: DetailedVideoModel)
+}
+
 class ResultsVC: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
@@ -31,6 +35,8 @@ class ResultsVC: UIViewController {
     }()
     
     public var videos = [Video]()
+    
+    weak var delegate: ResultCellDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +88,20 @@ extension ResultsVC: UICollectionViewDataSource{
 }
 
 extension ResultsVC: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let video = videos[indexPath.item]
+        
+        APIManager.shared.getDataFromYoutube(with: "\(video.title) \(video.year ?? "") trailer") { response in
+            switch response{
+                case .success(let youtubeVideo):
+                    self.delegate?.cellTapped( with: DetailedVideoModel(title: video.title, year: video.year ?? "", video: youtubeVideo.videoId))
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         
