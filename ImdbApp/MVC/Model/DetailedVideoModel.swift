@@ -8,7 +8,7 @@
 import Foundation
 
 struct DetailedVideoModel{
-    let title: String?
+    let title: String
     let year: String?
     let video: String?
 }

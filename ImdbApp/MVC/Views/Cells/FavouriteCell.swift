@@ -72,9 +72,7 @@ class FavouriteCell: UITableViewCell {
         }
     }
     
-    
     public func configureCell(with video: CoreVideo){
-        
         titlelabel.text = video.title
         yearlabel.text = video.year
         guard let imagePath = video.image else {return}
@@ -82,5 +80,4 @@ class FavouriteCell: UITableViewCell {
         bannerView.sd_setImage(with: imageUrl, completed: nil)
     }
     
-
 }

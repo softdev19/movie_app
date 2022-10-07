@@ -14,7 +14,7 @@ final class APIManager{
     private enum APIError: Error{
         case FailedToGetData
     }
-    
+
     static let shared = APIManager()
     
     private let mainUrl = "https://imdb-api.com/en/API/"

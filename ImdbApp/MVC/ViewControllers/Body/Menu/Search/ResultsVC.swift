@@ -8,10 +8,6 @@
 import UIKit
 import SnapKit
 
-protocol ResultCellDelegate: AnyObject{
-    func cellTapped(with model: DetailedVideoModel)
-}
-
 class ResultsVC: UIViewController {
     
     private lazy var collectionView: UICollectionView = {

@@ -9,13 +9,16 @@ import UIKit
 
 class SearchVC: UIViewController {
     
+    //MARK: --Properties
     private let searchController = UISearchController(searchResultsController: ResultsVC())
 
+    //MARK: --LifeCycleOfViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
+    //MARK: --Functions
     private func setupView(){
         title = "Search"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -26,13 +29,17 @@ class SearchVC: UIViewController {
     }
 }
 
+
+//MARK: --UISearchResultsUpdating
 extension SearchVC: UISearchResultsUpdating{
     
     func updateSearchResults(for searchController: UISearchController) {
         
-        guard let text = searchController.searchBar.text, !text.trimmingCharacters(in: .whitespaces).isEmpty, text.trimmingCharacters(in: .whitespaces).count >= 3 else {return}
-        guard let vc = searchController.searchResultsController as? ResultsVC else {return}
+        guard let text = searchController.searchBar.text,
+              !text.trimmingCharacters(in: .whitespaces).isEmpty,
+              text.trimmingCharacters(in: .whitespaces).count >= 3 else {return}
         
+        guard let vc = searchController.searchResultsController as? ResultsVC else {return}
         vc.delegate = self
         
         APIManager.shared.search(with: text) { response in
@@ -49,6 +56,8 @@ extension SearchVC: UISearchResultsUpdating{
     }
 }
 
+
+//MARK: --ResultCellDelegate
 extension SearchVC: ResultCellDelegate{
     
     func cellTapped(with model: DetailedVideoModel) {
@@ -58,7 +67,6 @@ extension SearchVC: ResultCellDelegate{
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
 }
 
 

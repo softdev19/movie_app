@@ -11,6 +11,7 @@ import YouTubeiOSPlayerHelper
 
 class DetailedVideoVC: UIViewController {
     
+    //MARK: --Properties
     private lazy var player: YTPlayerView = {
         let player = YTPlayerView()
         return player
@@ -37,16 +38,17 @@ class DetailedVideoVC: UIViewController {
         return label
     }()
 
+    //MARK: --LifeCycleOfViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
+    //MARK: --Functions
     private func setupView(){
         view.backgroundColor = .systemBackground
-        view.addSubview(player)
-        view.addSubview(stackView)
         
+        view.addSubview(player)
         player.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.left.equalTo(view.snp.left)
@@ -54,6 +56,7 @@ class DetailedVideoVC: UIViewController {
             make.height.equalTo(300)
         }
         
+        view.addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
             make.top.equalTo(player.snp.bottom).inset(-30)

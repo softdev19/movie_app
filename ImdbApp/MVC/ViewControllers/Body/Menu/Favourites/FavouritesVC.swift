@@ -10,6 +10,7 @@ import SnapKit
 
 class FavouritesVC: UIViewController {
     
+    //MARK: --Properties
     lazy private var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .plain)
         table.register(FavouriteCell.self, forCellReuseIdentifier: FavouriteCell.identifier)
@@ -18,6 +19,7 @@ class FavouritesVC: UIViewController {
     
     private var videos: [CoreVideo] = []
 
+    //MARK: --LifecycleOfViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -26,10 +28,7 @@ class FavouritesVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(fetchDataFromLocalStorage), name: NSNotification.Name("AddToFavourites"), object: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
-    
+    //MARK: --Functions
     @objc private func fetchDataFromLocalStorage(){
         LocalDataManager.shared.fetchData { response in
             switch response{
@@ -45,7 +44,6 @@ class FavouritesVC: UIViewController {
     }
 
     private func setupView(){
-        
         title = "Favourites"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
@@ -67,6 +65,8 @@ class FavouritesVC: UIViewController {
     }
 }
 
+
+//MARK: --UITableViewDataSource
 extension FavouritesVC: UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -85,6 +85,8 @@ extension FavouritesVC: UITableViewDataSource{
     }
 }
 
+
+//MARK: --UITableViewDelegate
 extension FavouritesVC: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -113,17 +115,17 @@ extension FavouritesVC: UITableViewDelegate{
         let video = videos[indexPath.row]
         guard let title = video.title, let year = video.year else {return}
         
-        APIManager.shared.getDataFromYoutube(with: "\(title) \(year) trailer") { [weak self] response in
+        APIManager.shared.getDataFromYoutube(with: "\(title) \(year) trailer") { response in
             switch response{
                 case .success(let youtubeVideo):
                     DispatchQueue.main.async {
                         let vc = DetailedVideoVC()
                         vc.configureView(with: DetailedVideoModel(title: title, year: year, video: youtubeVideo.videoId))
-                        self?.navigationController?.pushViewController(vc, animated: true)
+                        self.navigationController?.pushViewController(vc, animated: true)
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
-                }
+            }
         }
     }
 }

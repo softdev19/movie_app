@@ -7,9 +7,6 @@
 
 import UIKit
 
-protocol CellDelegate: AnyObject{
-    func CellDidTapped(_ cell: TableCell, with model: DetailedVideoModel)
-}
 
 class TableCell: UITableViewCell {
 

@@ -34,6 +34,7 @@
 		0489911F28F054F50025947B /* DetailedVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489911E28F054F50025947B /* DetailedVideoVC.swift */; };
 		0489912228F05E100025947B /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 0489912128F05E100025947B /* YouTubeiOSPlayerHelper */; };
 		0489912A28F06BB60025947B /* DetailedVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489912928F06BB60025947B /* DetailedVideoModel.swift */; };
+		0489912C28F087F80025947B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489912B28F087F80025947B /* Protocols.swift */; };
 		04AADD3228EC2982006B001A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3128EC2982006B001A /* CollectionCell.swift */; };
 		04AADD3E28EC34B1006B001A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3D28EC34B1006B001A /* APIManager.swift */; };
 		04AADD4028EC36B7006B001A /* ApiResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3F28EC36B7006B001A /* ApiResponseModel.swift */; };
@@ -67,6 +68,7 @@
 		0489911428F039830025947B /* YoutubeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeResponseModel.swift; sourceTree = "<group>"; };
 		0489911E28F054F50025947B /* DetailedVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailedVideoVC.swift; path = ImdbApp/MVC/ViewControllers/Body/DetailedVideoVC.swift; sourceTree = SOURCE_ROOT; };
 		0489912928F06BB60025947B /* DetailedVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedVideoModel.swift; sourceTree = "<group>"; };
+		0489912B28F087F80025947B /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		04AADD3128EC2982006B001A /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		04AADD3D28EC34B1006B001A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		04AADD3F28EC36B7006B001A /* ApiResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseModel.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 		04AADD3528EC2F4C006B001A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0489912B28F087F80025947B /* Protocols.swift */,
 				04AADD3C28EC347E006B001A /* LocalStorage */,
 				04AADD3628EC2F59006B001A /* Network */,
 			);
@@ -377,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0489911F28F054F50025947B /* DetailedVideoVC.swift in Sources */,
+				0489912C28F087F80025947B /* Protocols.swift in Sources */,
 				04631E3328E4E58800252F9B /* SettingsVC.swift in Sources */,
 				0459BBF728E4B806005DAC08 /* SearchVC.swift in Sources */,
 				0459BBDC28E4B01E005DAC08 /* HomeVC.swift in Sources */,
