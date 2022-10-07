@@ -8,3 +8,4 @@ Final OTUS study project
 6. URLSession and URLRequests to deal with API https://imdb-api.com
 7. NotificationCenter for reloading local data after making specific actions
 8. Swift Package Manager to connect frameworks
+9. YouTubeiOSPlayer for playing trailers
