@@ -26,6 +26,6 @@ class MainVC: UITabBarController {
         searchVC.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         favouritesVC.tabBarItem.image = UIImage(systemName: "star")
         
-        setViewControllers([searchVC, favouritesVC], animated: true)
+        setViewControllers([favouritesVC], animated: true)
     }
 }

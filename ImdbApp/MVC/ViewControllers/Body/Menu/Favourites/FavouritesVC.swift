@@ -107,7 +107,26 @@ extension FavouritesVC: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
-        //TODO: Segue to DetailVideoVC
+        
+        let video = videos[indexPath.row]
+        guard let title = video.title, let year = video.year else {return}
+        
+        APIManager.shared.getDataFromYoutube(with: "\(title) \(year) trailer") { [weak self] response in
+            switch response{
+                case .success(let youtubeVideo):
+                    DispatchQueue.main.async {
+                        let vc = DetailedVideoVC()
+                        vc.configureView(with: DetailedVideoModel(title: title, year: year, video: youtubeVideo.videoId))
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+        }
     }
 }
+
+
+

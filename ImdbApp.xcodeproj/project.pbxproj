@@ -30,10 +30,13 @@
 		04631E2D28E4E05100252F9B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 04631E2C28E4E05100252F9B /* FirebaseFirestore */; };
 		04631E3128E4E3DF00252F9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04631E3028E4E3DF00252F9B /* GoogleService-Info.plist */; };
 		04631E3328E4E58800252F9B /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04631E3228E4E58800252F9B /* SettingsVC.swift */; };
-		0489911528F039830025947B /* Youtube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489911428F039830025947B /* Youtube.swift */; };
+		0489911528F039830025947B /* YoutubeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489911428F039830025947B /* YoutubeResponseModel.swift */; };
+		0489911D28F04CE40025947B /* DetailedVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489911C28F04CE40025947B /* DetailedVideoModel.swift */; };
+		0489911F28F054F50025947B /* DetailedVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489911E28F054F50025947B /* DetailedVideoVC.swift */; };
+		0489912228F05E100025947B /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 0489912128F05E100025947B /* YouTubeiOSPlayerHelper */; };
 		04AADD3228EC2982006B001A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3128EC2982006B001A /* CollectionCell.swift */; };
 		04AADD3E28EC34B1006B001A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3D28EC34B1006B001A /* APIManager.swift */; };
-		04AADD4028EC36B7006B001A /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3F28EC36B7006B001A /* Video.swift */; };
+		04AADD4028EC36B7006B001A /* ApiResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD3F28EC36B7006B001A /* ApiResponseModel.swift */; };
 		04AADD4328EC46CC006B001A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 04AADD4228EC46CC006B001A /* SDWebImage */; };
 		04AADD4828EC6D04006B001A /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD4728EC6D04006B001A /* LocalDataManager.swift */; };
 		04AADD5728EC90CA006B001A /* FavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AADD5628EC90CA006B001A /* FavouriteCell.swift */; };
@@ -61,10 +64,12 @@
 		04631E2128E4D0A100252F9B /* bg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bg.mp4; sourceTree = "<group>"; };
 		04631E3028E4E3DF00252F9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04631E3228E4E58800252F9B /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		0489911428F039830025947B /* Youtube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Youtube.swift; sourceTree = "<group>"; };
+		0489911428F039830025947B /* YoutubeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeResponseModel.swift; sourceTree = "<group>"; };
+		0489911C28F04CE40025947B /* DetailedVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedVideoModel.swift; sourceTree = "<group>"; };
+		0489911E28F054F50025947B /* DetailedVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailedVideoVC.swift; path = ImdbApp/MVC/ViewControllers/Body/DetailedVideoVC.swift; sourceTree = SOURCE_ROOT; };
 		04AADD3128EC2982006B001A /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		04AADD3D28EC34B1006B001A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		04AADD3F28EC36B7006B001A /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		04AADD3F28EC36B7006B001A /* ApiResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseModel.swift; sourceTree = "<group>"; };
 		04AADD4728EC6D04006B001A /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
 		04AADD5628EC90CA006B001A /* FavouriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavouriteCell.swift; path = ImdbApp/MVC/Views/Cells/FavouriteCell.swift; sourceTree = SOURCE_ROOT; };
 		04C5FCC928ED9E7E00102B74 /* ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
@@ -76,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04AADD4328EC46CC006B001A /* SDWebImage in Frameworks */,
+				0489912228F05E100025947B /* YouTubeiOSPlayerHelper in Frameworks */,
 				04631E2728E4E05100252F9B /* FirebaseAnalytics in Frameworks */,
 				04631E2928E4E05100252F9B /* FirebaseAuth in Frameworks */,
 				04631E2B28E4E05100252F9B /* FirebaseDatabase in Frameworks */,
@@ -213,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				0459BBF428E4B632005DAC08 /* MainVC.swift */,
+				0489911E28F054F50025947B /* DetailedVideoVC.swift */,
 				0415D6B128E74FE300BE4763 /* Menu */,
 			);
 			path = Body;
@@ -256,8 +263,9 @@
 		04AADD3928EC31F4006B001A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0489911428F039830025947B /* Youtube.swift */,
-				04AADD3F28EC36B7006B001A /* Video.swift */,
+				0489911428F039830025947B /* YoutubeResponseModel.swift */,
+				04AADD3F28EC36B7006B001A /* ApiResponseModel.swift */,
+				0489911C28F04CE40025947B /* DetailedVideoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -303,6 +311,7 @@
 				04631E2A28E4E05100252F9B /* FirebaseDatabase */,
 				04631E2C28E4E05100252F9B /* FirebaseFirestore */,
 				04AADD4228EC46CC006B001A /* SDWebImage */,
+				0489912128F05E100025947B /* YouTubeiOSPlayerHelper */,
 			);
 			productName = ImdbApp;
 			productReference = 0459BBD428E4B01E005DAC08 /* ImdbApp.app */;
@@ -336,6 +345,7 @@
 				0459BC0328E4BC92005DAC08 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				04631E2528E4E05100252F9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				04AADD4128EC46CC006B001A /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				0489912028F05E100025947B /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
 			);
 			productRefGroup = 0459BBD528E4B01E005DAC08 /* Products */;
 			projectDirPath = "";
@@ -366,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0489911F28F054F50025947B /* DetailedVideoVC.swift in Sources */,
 				04631E3328E4E58800252F9B /* SettingsVC.swift in Sources */,
 				0459BBF728E4B806005DAC08 /* SearchVC.swift in Sources */,
 				0459BBDC28E4B01E005DAC08 /* HomeVC.swift in Sources */,
@@ -373,6 +384,7 @@
 				0459BBE228E4B01F005DAC08 /* ImdbApp.xcdatamodeld in Sources */,
 				0415D6AA28E7229700BE4763 /* TableHeader.swift in Sources */,
 				0459BBF928E4B818005DAC08 /* FavouritesVC.swift in Sources */,
+				0489911D28F04CE40025947B /* DetailedVideoModel.swift in Sources */,
 				0415D6AD28E7314F00BE4763 /* TableCell.swift in Sources */,
 				0459BBFF28E4BAA7005DAC08 /* LoginVC.swift in Sources */,
 				0459BC0128E4BAC3005DAC08 /* SignupVC.swift in Sources */,
@@ -382,8 +394,8 @@
 				04AADD3E28EC34B1006B001A /* APIManager.swift in Sources */,
 				04AADD5728EC90CA006B001A /* FavouriteCell.swift in Sources */,
 				04AADD4828EC6D04006B001A /* LocalDataManager.swift in Sources */,
-				04AADD4028EC36B7006B001A /* Video.swift in Sources */,
-				0489911528F039830025947B /* Youtube.swift in Sources */,
+				04AADD4028EC36B7006B001A /* ApiResponseModel.swift in Sources */,
+				0489911528F039830025947B /* YoutubeResponseModel.swift in Sources */,
 				0459BBDA28E4B01E005DAC08 /* SceneDelegate.swift in Sources */,
 				0459BBFD28E4BA93005DAC08 /* StartVC.swift in Sources */,
 			);
@@ -615,6 +627,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		0489912028F05E100025947B /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		04AADD4128EC46CC006B001A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -650,6 +670,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04631E2528E4E05100252F9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		0489912128F05E100025947B /* YouTubeiOSPlayerHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0489912028F05E100025947B /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
+			productName = YouTubeiOSPlayerHelper;
 		};
 		04AADD4228EC46CC006B001A /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;

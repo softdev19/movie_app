@@ -102,6 +102,7 @@ extension TableCell: UICollectionViewDelegate{
             case .success(let urlVideo):
                 //TODO: Open DetailVideoVC
                 //TODO: Send video.title, video year, urlVideo to DetailVideoVC
+                return
             case .failure(let error):
                 print(error.localizedDescription)
             }

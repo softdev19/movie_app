@@ -116,28 +116,28 @@ final class APIManager{
         task.resume()
     }
     
-    func getDataFromYoutube(with query: String, completion: @escaping (Result<String, Error>)->Void){
+    func getDataFromYoutube(with query: String, completion: @escaping (Result<YoutubeVideo, Error>)->Void){
         
         guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
-        
         let stringUrl = "\(mainYoutubeUrl)q=\(query)&key=\(youtubeApiKey)"
         guard let url = URL(string: stringUrl) else {return}
-        let urlRequest = URLRequest(url: url)
         
+        let urlRequest = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: urlRequest) { data, _ , error in
-            
+         
             guard let data = data, error == nil else { return }
-            
+  
             do{
                 let youtubeResponse = try JSONDecoder().decode(YoutubeResponse.self, from: data)
                 let youtubeElement = youtubeResponse.items[0]
-                let youtubeVideo = youtubeElement.id.videoId
+                let youtubeVideo = youtubeElement.id
                 completion(.success(youtubeVideo))
             }
             catch{
                 completion(.failure(APIError.FailedToGetData))
             }
         }
+        task.resume()
     }
 }
 
