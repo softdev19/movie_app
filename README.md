@@ -1,11 +1,24 @@
-Final OTUS study project
+**APP**: Movie aggregator based on the API (Final OTUS study project)
 
-1. Programmatic UI (UIKit)
-2. AVPlayer for start screen
-3. SnapKit for layout
-4. SDWebImage for asynchronous downloading and caching images
-5. CoreData for work with local data
-6. URLSession and URLRequests to deal with API https://imdb-api.com
-7. NotificationCenter for reloading local data after making specific actions
-8. Swift Package Manager to connect frameworks
-9. YouTubeiOSPlayer for playing trailers
+**Description**: An application that simulates the basic functionality of a typical Netflix/Kinopoisk movie aggregator by connecting to imdb-api.com and the YouTube data API.
+
+**Tech Stack**: UIKit, SnapKit, CoreData, FirebaseAuth, Firestore, URLSession, REST API, SDWebImage, AVKit, IOSPlayer, SwiftPackageManager
+
+**What was done**:
+
+- Implemented UI via code (UIKit)
+- Implemented autolayout using Snap Kit
+- Used FirebaseAuth to register and authenticate users
+- Used Firestore for remote storage of user data
+- Organized persistent layer using CoreData for local data storage
+- Created network layer via URLSession to work with API (GET requests)
+- Used SDWebImage for asynchronous loading and caching of images
+- Used AVKit for background start screen and Youtube IOSPlayer to download trailers
+- Used SwiftPackageManager to connect frameworks
+
+
+| Screen  | Description |
+| ------------- | ------------- |
+| <img width="355" alt="Снимок экрана 2022-10-07 в 19 21 43" src="https://user-images.githubusercontent.com/100786077/194601547-dd936503-3f14-4b53-aba7-8ccd83b04043.png">  | Content Cell  |
+| <img width="361" alt="Снимок экрана 2022-10-07 в 19 23 08" src="https://user-images.githubusercontent.com/100786077/194601568-9cbceb01-3f50-40fb-98b2-444668a6e8bb.png">  | Content Cell  |
+| <img width="361" alt="Снимок экрана 2022-10-07 в 19 23 19" src="https://user-images.githubusercontent.com/100786077/194601574-d62ba66b-dd75-4863-bb2f-810a76cb5770.png">  | Content Cell  |
