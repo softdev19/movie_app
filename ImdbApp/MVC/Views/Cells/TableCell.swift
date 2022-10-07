@@ -92,6 +92,23 @@ extension TableCell: UICollectionViewDataSource{
 
 //MARK: --UICollectionViewDelegate
 extension TableCell: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let video = videos[indexPath.item]
+        
+        APIManager.shared.getDataFromYoutube(with: "\(video.title) \(video.year) trailer") { response in
+            switch response{
+            case .success(let urlVideo):
+                //TODO: Open DetailVideoVC
+                //TODO: Send video.title, video year, urlVideo to DetailVideoVC
+                return
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+    }
 
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         

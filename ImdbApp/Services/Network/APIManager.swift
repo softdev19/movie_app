@@ -19,6 +19,8 @@ final class APIManager{
     
     private let mainUrl = "https://imdb-api.com/en/API/"
     private let apiKey = "k_m8tol6b3"
+    private let youtubeApiKey = "AIzaSyB9UkZ-An3-QbD85Yu2aWmGbBol8fh3Evs"
+    private let mainYoutubeUrl = "https://youtube.googleapis.com/youtube/v3/search?"
     
     private init(){}
     
@@ -114,6 +116,29 @@ final class APIManager{
         task.resume()
     }
     
+    func getDataFromYoutube(with query: String, completion: @escaping (Result<YoutubeVideo, Error>)->Void){
+        
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
+        let stringUrl = "\(mainYoutubeUrl)q=\(query)&key=\(youtubeApiKey)"
+        guard let url = URL(string: stringUrl) else {return}
+        
+        let urlRequest = URLRequest(url: url)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, _ , error in
+         
+            guard let data = data, error == nil else { return }
+  
+            do{
+                let youtubeResponse = try JSONDecoder().decode(YoutubeResponse.self, from: data)
+                let youtubeElement = youtubeResponse.items[0]
+                let youtubeVideo = youtubeElement.id
+                completion(.success(youtubeVideo))
+            }
+            catch{
+                completion(.failure(APIError.FailedToGetData))
+            }
+        }
+        task.resume()
+    }
 }
 
 
