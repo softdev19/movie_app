@@ -22,8 +22,9 @@
 | ------------- | ------------- | ------------- |
 
 
+
 **Welcome Screens**:
-| <img width="327" alt="Снимок экрана 2022-10-07 в 19 39 48" src="https://user-images.githubusercontent.com/100786077/194605241-b79a4788-ebcb-4b5f-972c-613537b58890.png">  | <img width="326" alt="Снимок экрана 2022-10-07 в 19 39 57" src="https://user-images.githubusercontent.com/100786077/194605243-810a6c2d-0523-4978-a8ed-efb0484a0122.png"> |  |
+| <img width="351" alt="Снимок экрана 2022-10-08 в 11 37 10" src="https://user-images.githubusercontent.com/100786077/194698434-35f56e18-1ff9-4d62-a052-9e11812c21b6.png">  | <img width="326" alt="Снимок экрана 2022-10-07 в 19 39 57" src="https://user-images.githubusercontent.com/100786077/194605243-810a6c2d-0523-4978-a8ed-efb0484a0122.png"> | <img width="327" alt="Снимок экрана 2022-10-07 в 19 39 48" src="https://user-images.githubusercontent.com/100786077/194605241-b79a4788-ebcb-4b5f-972c-613537b58890.png">  |
 | ------------- | ------------- | ------------- |
 
 
