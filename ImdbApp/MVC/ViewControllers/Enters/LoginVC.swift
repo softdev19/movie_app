@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
 class LoginVC: UIViewController {
     
@@ -54,11 +55,61 @@ class LoginVC: UIViewController {
         setupView()
     }
     
+    
     //MARK: --Functions
+    private func validateFields()->String?{
+        
+        if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+            return "Error: some fields are empty. Please check it and try again"
+        }
+ 
+        if isEmail(emailTextField.text!) == false{
+            return "Error: incorrect email"
+        }
+        
+        if isPasswordValid(passwordTextField.text!) == false{
+            return "Error: incorrect password"
+        }
+        
+        return nil
+    }
+    
+    private func isEmail(_ email: String)->Bool{
+        let emailTest = NSPredicate(format: "SELF MATCHES %@","^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
+        return emailTest.evaluate(with: email)
+    }
+    
+    private func isPasswordValid(_ password: String)->Bool{
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@","^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        return passwordTest.evaluate(with: password)
+    }
+
+    
     @objc private func goToMainVC(){
         
-        self.view.window?.rootViewController = MainVC()
-        self.view.window?.makeKeyAndVisible()
+        let error = validateFields()
+        if error != nil{
+            showError(error!)
+        }
+        else{
+            let cleanEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let cleanPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            Auth.auth().signIn(withEmail: cleanEmail, password: cleanPassword) { result, error in
+                if error != nil{
+                    self.showError("Error: incorrect email or password, or such user doesn't exist.")
+                }
+                else{
+                    self.view.window?.rootViewController = MainVC()
+                    self.view.window?.makeKeyAndVisible()
+                }
+            }
+        }
+    }
+    
+    private func showError(_ message: String){
+        errorLabel.alpha = 1
+        errorLabel.text = message
     }
     
     private func setupView(){
