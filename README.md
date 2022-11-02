@@ -6,6 +6,7 @@
 
 **What was done**:
 
+- Used SwiftPackageManager to connect additional modules
 - Implemented UI via code (UIKit)
 - Implemented autolayout using Snap Kit
 - Used FirebaseAuth to register and authenticate users
